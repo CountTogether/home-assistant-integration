@@ -1,0 +1,10 @@
+{
+  "services": {
+    "increment": "mdi:plus-circle-outline",
+    "decrement": "mdi:minus-circle-outline",
+    "set_value": "mdi:pencil-circle-outline",
+    "set_start_date": "mdi:calendar-start",
+    "set_end_date": "mdi:calendar-end"
+  }
+}
+

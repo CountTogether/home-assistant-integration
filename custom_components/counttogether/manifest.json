@@ -1,0 +1,14 @@
+{
+  "domain": "counttogether",
+  "name": "CountTogether",
+  "version": "1.0.0",
+  "documentation": "https://developers.counttogether.app/docs/overview.html",
+  "issue_tracker": "https://github.com/CountTogether-Repos/home-assistant-integration/issues",
+  "dependencies": [],
+  "codeowners": ["@CountTogether-Repos"],
+  "requirements": ["aiohttp>=3.9.0"],
+  "iot_class": "cloud_push",
+  "integration_type": "hub",
+  "config_flow": true
+}
+

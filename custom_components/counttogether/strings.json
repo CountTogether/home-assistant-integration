@@ -1,0 +1,74 @@
+{
+  "title": "CountTogether",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up CountTogether",
+        "description": "Enter your CountTogether API token. You can find it in the CountTogether app under Settings → API.\n\nThe timezone is taken automatically from your Home Assistant settings.",
+        "data": {
+          "api_token": "API Token"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid API token. Please check the token in the CountTogether app.",
+      "cannot_connect": "Failed to connect to CountTogether. Please check your internet connection.",
+      "unknown": "Unexpected error. Please try again."
+    },
+    "abort": {
+      "already_configured": "CountTogether is already configured."
+    }
+  },
+  "services": {
+    "increment": {
+      "name": "Increment counter",
+      "description": "Increments an UpDown counter by the specified amount.",
+      "fields": {
+        "amount": {
+          "name": "Amount",
+          "description": "Value to increment by (default: 1)."
+        }
+      }
+    },
+    "decrement": {
+      "name": "Decrement counter",
+      "description": "Decrements an UpDown counter by the specified amount.",
+      "fields": {
+        "amount": {
+          "name": "Amount",
+          "description": "Value to decrement by (default: 1)."
+        }
+      }
+    },
+    "set_value": {
+      "name": "Set counter value",
+      "description": "Sets the value of an UpDown counter directly.",
+      "fields": {
+        "value": {
+          "name": "Value",
+          "description": "New value for the counter."
+        }
+      }
+    },
+    "set_start_date": {
+      "name": "Set start date (FromDate)",
+      "description": "Sets the start date of a FromDate counter.",
+      "fields": {
+        "start_date": {
+          "name": "Start date",
+          "description": "New start date."
+        }
+      }
+    },
+    "set_end_date": {
+      "name": "Set end date (ToDate)",
+      "description": "Sets the end date of a ToDate counter.",
+      "fields": {
+        "end_date": {
+          "name": "End date",
+          "description": "New end date."
+        }
+      }
+    }
+  }
+}

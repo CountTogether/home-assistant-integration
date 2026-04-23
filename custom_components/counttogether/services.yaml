@@ -1,0 +1,99 @@
+increment:
+  name: Increment counter
+  description: Increments an UpDown counter by the specified amount.
+  target:
+    device:
+      - integration: counttogether
+        model: UpDown
+    entity:
+      - integration: counttogether
+        domain: sensor
+  fields:
+    amount:
+      name: Amount
+      description: "Value to increment by (default: 1)."
+      default: 1
+      example: 1
+      selector:
+        number:
+          min: 1
+          max: 10000
+          mode: box
+
+decrement:
+  name: Decrement counter
+  description: Decrements an UpDown counter by the specified amount.
+  target:
+    device:
+      - integration: counttogether
+        model: UpDown
+    entity:
+      - integration: counttogether
+        domain: sensor
+  fields:
+    amount:
+      name: Amount
+      description: "Value to decrement by (default: 1)."
+      default: 1
+      example: 1
+      selector:
+        number:
+          min: 1
+          max: 10000
+          mode: box
+
+set_value:
+  name: Set counter value
+  description: Sets the value of an UpDown counter directly.
+  target:
+    device:
+      - integration: counttogether
+        model: UpDown
+    entity:
+      - integration: counttogether
+        domain: sensor
+  fields:
+    value:
+      name: Value
+      description: New value for the counter.
+      required: true
+      example: 42
+      selector:
+        number:
+          mode: box
+
+set_start_date:
+  name: Set start date (FromDate)
+  description: Sets the start date of a FromDate counter.
+  target:
+    device:
+      - integration: counttogether
+        model: FromDate
+    entity:
+      - integration: counttogether
+        domain: sensor
+  fields:
+    start_date:
+      name: Start Date
+      description: New start date.
+      required: true
+      selector:
+        date:
+
+set_end_date:
+  name: Set end date (ToDate)
+  description: Sets the end date of a ToDate counter.
+  target:
+    device:
+      - integration: counttogether
+        model: ToDate
+    entity:
+      - integration: counttogether
+        domain: sensor
+  fields:
+    end_date:
+      name: End Date
+      description: New end date.
+      required: true
+      selector:
+        date:

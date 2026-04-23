@@ -1,0 +1,75 @@
+{
+  "title": "CountTogether",
+  "config": {
+    "step": {
+      "user": {
+        "title": "CountTogether API konfigurieren",
+        "description": "Gib deinen CountTogether API-Token ein. Du findest ihn in der CountTogether App unter Einstellungen → API.\n\nDie Zeitzone wird automatisch aus deinen Home Assistant Einstellungen übernommen.",
+        "data": {
+          "api_token": "API-Token"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Ungültiger API-Token. Bitte überprüfe den Token in der CountTogether App.",
+      "cannot_connect": "Verbindung zu CountTogether fehlgeschlagen. Bitte prüfe deine Internetverbindung.",
+      "unknown": "Unbekannter Fehler. Bitte versuche es erneut."
+    },
+    "abort": {
+      "already_configured": "CountTogether ist bereits konfiguriert."
+    }
+  },
+  "services": {
+    "increment": {
+      "name": "Zähler erhöhen",
+      "description": "Erhöht einen Hoch-/Runter-Zähler um den angegebenen Wert.",
+      "fields": {
+        "amount": {
+          "name": "Schrittweite",
+          "description": "Um wie viel der Zähler erhöht werden soll (Standard: 1)."
+        }
+      }
+    },
+    "decrement": {
+      "name": "Zähler verringern",
+      "description": "Verringert einen Hoch-/Runter-Zähler um den angegebenen Wert.",
+      "fields": {
+        "amount": {
+          "name": "Schrittweite",
+          "description": "Um wie viel der Zähler verringert werden soll (Standard: 1)."
+        }
+      }
+    },
+    "set_value": {
+      "name": "Zählerstand festlegen",
+      "description": "Setzt den Wert eines Hoch-/Runter-Zählers direkt auf den angegebenen Wert.",
+      "fields": {
+        "value": {
+          "name": "Neuer Zählerstand",
+          "description": "Der neue Wert für den Zähler."
+        }
+      }
+    },
+    "set_start_date": {
+      "name": "Startdatum ändern (Seit-Datum-Zähler)",
+      "description": "Ändert das Startdatum eines Seit-Datum-Zählers (FromDate).",
+      "fields": {
+        "start_date": {
+          "name": "Startdatum",
+          "description": "Das neue Startdatum, ab dem gezählt wird."
+        }
+      }
+    },
+    "set_end_date": {
+      "name": "Enddatum ändern (Bis-Datum-Zähler)",
+      "description": "Ändert das Enddatum eines Bis-Datum-Zählers (ToDate).",
+      "fields": {
+        "end_date": {
+          "name": "Enddatum",
+          "description": "Das neue Zieldatum, auf das heruntergezählt wird."
+        }
+      }
+    }
+  }
+}
+
