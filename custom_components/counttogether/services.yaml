@@ -2,9 +2,6 @@ increment:
   name: Increment counter
   description: Increments an UpDown counter by the specified amount.
   target:
-    device:
-      - integration: counttogether
-        model: UpDown
     entity:
       - integration: counttogether
         domain: sensor
@@ -24,9 +21,6 @@ decrement:
   name: Decrement counter
   description: Decrements an UpDown counter by the specified amount.
   target:
-    device:
-      - integration: counttogether
-        model: UpDown
     entity:
       - integration: counttogether
         domain: sensor
@@ -46,9 +40,6 @@ set_value:
   name: Set counter value
   description: Sets the value of an UpDown counter directly.
   target:
-    device:
-      - integration: counttogether
-        model: UpDown
     entity:
       - integration: counttogether
         domain: sensor
@@ -66,9 +57,6 @@ set_start_date:
   name: Set start date (FromDate)
   description: Sets the start date of a FromDate counter.
   target:
-    device:
-      - integration: counttogether
-        model: FromDate
     entity:
       - integration: counttogether
         domain: sensor
@@ -84,9 +72,6 @@ set_end_date:
   name: Set end date (ToDate)
   description: Sets the end date of a ToDate counter.
   target:
-    device:
-      - integration: counttogether
-        model: ToDate
     entity:
       - integration: counttogether
         domain: sensor
