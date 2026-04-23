@@ -1,6 +1,5 @@
 {
   "name": "CountTogether",
-  "description": "Home Assistant integration for CountTogether – manage your counters directly from HA.",
   "render_readme": true,
   "homeassistant": "2026.4.0",
   "content_in_root": false
