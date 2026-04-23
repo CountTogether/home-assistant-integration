@@ -48,26 +48,16 @@ Then restart Home Assistant.
 
 ## Using the actions
 
-The services use Home Assistant's standard `target` concept. You pick a device (one counter per device) or a counter entity as the target.
+The services use Home Assistant's standard `target` concept. Pick a CountTogether counter entity as the target (or a device – Home Assistant will forward the call to its entities).
 
 Increment a counter by 1:
 
 ```yaml
 action: counttogether.increment
 target:
-  device_id: 4a1b2c3d4e5f6789abcdef0123456789
-data:
-  amount: 1
-```
-
-Or by entity:
-
-```yaml
-action: counttogether.increment
-target:
   entity_id: sensor.my_counter_value
 data:
-  amount: 2
+  amount: 1
 ```
 
 Change the start date of a FromDate counter:
@@ -75,12 +65,12 @@ Change the start date of a FromDate counter:
 ```yaml
 action: counttogether.set_start_date
 target:
-  device_id: 4a1b2c3d4e5f6789abcdef0123456789
+  entity_id: sensor.my_counter_start_date
 data:
   start_date: "2026-01-01"
 ```
 
-Counter-type filtering is enforced automatically: `increment`, `decrement` and `set_value` only work with UpDown counters, `set_start_date` only with FromDate, `set_end_date` only with ToDate.
+Counter-type enforcement happens on the server: `increment`, `decrement` and `set_value` only work with UpDown counters, `set_start_date` only with FromDate, `set_end_date` only with ToDate. Calling a service on an incompatible counter results in an error.
 
 ## Requirements
 
